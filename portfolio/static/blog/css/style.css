@@ -1,0 +1,18 @@
+.blog-title {
+    font-family: Raleway !important;
+    font-weight:bold;
+    font-size: 6em !important;
+}
+
+.blog-detail-title {
+    font-family: Raleway !important;
+    font-weight:normal;
+    color:black !important;
+    font-size: 4em !important;
+}
+
+.blog-description {
+    font-family: Raleway !important;
+    font-weight:bold;
+    font-size:1.2em !important;
+}

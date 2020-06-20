@@ -1,0 +1,22 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+<div class="container d-flex flex-column align-items-center">
+    <h1 class="h1 blog-title">Blog</h1>
+    <span class="blog-description">Ayhan was written {{blogs.count}} blog{{blogs.count|pluralize}}</span>
+    {% if blogs.count > 0 %}
+        {% for blog in blogs %}
+            <div class="col-8 flex-column mt-3 mb-5">
+                <h3 class="h3 font-weight-bold">
+                    <a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a>
+                </h3>
+                <div class="text-secondary">{{ blog.created | date:'l d Y' }}</div>
+                <span>{{ blog.content|safe|truncatechars:250 }}</span>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3 class="h3 py-5">No blogs here</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
